@@ -6,7 +6,7 @@ events.on("push", () => {
     "echo Hello Pipeline"
     ]
     
-    var docker = new Job("job1", "docker:dind");
+    var docker = new Job("job2", "docker:dind");
     docker.privileged = true;
     docker.env = {
     DOCKER_DRIVER: "overlay"
@@ -16,7 +16,8 @@ events.on("push", () => {
         "sleep 10",
         "cd /src",
         "ls -l",
-        "docker ps"
+        "docker build -t mayursuccessive/image-processing:v1",
+        "docker images"
         ];
     
     greeting.run();
