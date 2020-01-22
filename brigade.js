@@ -1,17 +1,25 @@
 const { events, Job } = require("brigadier");
 events.on("push", () => {
-    var job = new Job("job2", "docker:dind");
-    job.privileged = true;
-    job.env = {
+    
+    var greeting = new Job("job1", "alpine:latest")
+    greeting.tasks = [
+    "echo Hello Pipeline"
+    ]
+    
+    var docker = new Job("job1", "docker:dind");
+    docker.privileged = true;
+    docker.env = {
     DOCKER_DRIVER: "overlay"
     }
-    job.tasks = [
+    docker.tasks = [
         "dockerd-entrypoint.sh &",
         "sleep 10",
         "cd /src",
         "ls -l",
         "docker ps"
         ];
-    job.run();
+    
+    greeting.run();
+    docker.run();
 
 });
