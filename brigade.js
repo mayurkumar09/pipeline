@@ -7,9 +7,9 @@ events.on("push", () => {
     }
     job.tasks = [
         "dockerd-entrypoint.sh &",
+        "sleep 10",
         "cd /src",
         "ls -l",
-        "sleep 10",
         "docker ps"
         ];
     job.run();
