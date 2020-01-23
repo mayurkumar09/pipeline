@@ -6,7 +6,7 @@ events.on("push", (e, p) => {
     //greeting.storage.enabled = true;
     greeting.tasks = [
     "echo Hello Pipeline",
-    `${commit}`,
+    `echo ${commit}`
     
     ]
     
