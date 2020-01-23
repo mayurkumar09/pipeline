@@ -1,8 +1,8 @@
 const { events, Job } = require("brigadier");
 events.on("push", (e, p) => {
     console.log("Received push for commit " + e.revision.commit)
-    greeting.storage.enabled = true;
     var greeting = new Job("job1", "alpine:latest");
+    greeting.storage.enabled = true;
     greeting.tasks = [
     "echo Hello Pipeline",
     "cd /mnt/brigade/share",
