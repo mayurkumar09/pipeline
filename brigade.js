@@ -6,8 +6,7 @@ events.on("push", (e, p) => {
     var greeting = new Job("job1", "alpine:latest")
     greeting.tasks = [
     "echo Hello Pipeline",
-    "echo $dest"
-    
+    "echo hello" + dest    
     ]
     
     // var docker = new Job("job2", "docker:dind");
