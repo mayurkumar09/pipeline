@@ -1,7 +1,7 @@
 const { events, Job } = require("brigadier");
 events.on("push", (e, p) => {
     //console.log("Received push for commit " + e.revision.commit)
-    var commit = e.revision.commit;
+    var commit = e.revision.commit.substr(e.revision.commit.substr.length -7);
     var greeting = new Job("job1", "alpine:latest");
     //greeting.storage.enabled = true;
     greeting.tasks = [
