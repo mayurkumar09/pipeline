@@ -4,7 +4,7 @@ events.on("push", (e, p) => {
     var greeting = new Job("job1", "alpine:latest")
     greeting.tasks = [
     "echo Hello Pipeline",
-    "console.log("Received push for commit " + e.revision.commit)"
+    console.log("Received push for commit " + e.revision.commit)
     
     ]
     
