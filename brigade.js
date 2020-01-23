@@ -6,8 +6,7 @@ events.on("push", (e, p) => {
     //greeting.storage.enabled = true;
     greeting.tasks = [
     "echo Hello Pipeline",
-    `echo ${commit}`
-    
+    "echo ${commit}"
     ]
     
     // var docker = new Job("job2", "docker:dind");
