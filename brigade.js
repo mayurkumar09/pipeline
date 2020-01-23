@@ -21,6 +21,7 @@ events.on("push", (e, p) => {
     //     "docker build -t mayursuccessive/image-processing:v1 .",
     //     "docker images"
     //     ];
+
     
     greeting.run();
     //docker.run();
