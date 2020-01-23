@@ -1,15 +1,13 @@
 const { events, Job } = require("brigadier");
 events.on("push", (e, p) => {
-    console.log("Received push for commit " + e.revision.commit)
+    //console.log("Received push for commit " + e.revision.commit)
+    let commit = e.revision.commit;
     var greeting = new Job("job1", "alpine:latest");
-    greeting.storage.enabled = true;
+    //greeting.storage.enabled = true;
     greeting.tasks = [
     "echo Hello Pipeline",
-    "cd /mnt/brigade/share",
-    "echo insidde",
-    "ls -l",
-    "touch git.txt",
-    "ls -l"
+    `${commit}`,
+    
     ]
     
     // var docker = new Job("job2", "docker:dind");
